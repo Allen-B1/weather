@@ -3,8 +3,17 @@
   <head>
     <link rel="stylesheet" href="https://cdn.rawgit.com/owenversteeg/min/gh-pages/entireframework.min.css">
   </head>
-  <body style="padding:0 32px">
-    <h1>Weather</h1>
-    <a class="btn btn-b" href="weather.html" onclick="window.open('weather.html', '_blank', 'width=400,height=180,menubar=no,location=no,resizable=no,scrollbars=no,status=no'); return false">Try it</a>
+  <body style="padding:0 0">
+    <nav class="nav" tabindex="-1" onclick="this.focus()">
+      <div class="container">
+        <a class="pagename current" href="#">Weather</a>
+        <a class="current" href="#">Home</a>
+        <a href="https://github.com/Allen-B1/weather/">GitHub</a>
+      </div>
+    </nav>
+    <div class="container">
+      <h1>Weather</h1>
+      <a class="btn btn-b" href="weather.html" onclick="window.open('weather.html', '_blank', 'width=400,height=180,menubar=no,location=no,resizable=no,scrollbars=no,status=no'); return false">Try it</a>
+    </div>
   </body>
 </html>
