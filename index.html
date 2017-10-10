@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>Weather Applet</title>
     <link rel="stylesheet" href="https://cdn.rawgit.com/owenversteeg/min/gh-pages/entireframework.min.css">
   </head>
   <body style="padding:0 0">
@@ -14,7 +15,7 @@
         function openWindow() {
           var win = window.open('weather.html', '_blank', 'width=400,height=150,menubar=no,location=no,resizable=no,scrollbars=no,status=no');
           win.onresize = function() {
-            setTimeout(function() { w.resizeTo(400, 150); }, 300);
+            setTimeout(function() { win.resizeTo(400, 150); }, 300);
           };
         }
       </script>
