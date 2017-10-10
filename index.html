@@ -10,10 +10,18 @@
         <a class="current" href="#">Home</a>
         <a href="https://github.com/Allen-B1/weather/">GitHub</a>
       </div>
+      <script>
+        function openWindow() {
+          var win = window.open('weather.html', '_blank', 'width=400,height=150,menubar=no,location=no,resizable=no,scrollbars=no,status=no');
+          win.onresize = function() {
+            setTimeout(function() { w.resizeTo(400, 150); }, 300);
+          };
+        }
+      </script>
     </nav>
     <div class="container">
       <h1>Weather</h1>
-      <a class="btn btn-b" href="weather.html" onclick="window.open('weather.html', '_blank', 'width=400,height=180,menubar=no,location=no,resizable=no,scrollbars=no,status=no'); return false">Try it</a>
+      <a class="btn btn-b" href="weather.html" onclick="openWindow(); return false">Try it</a>
     </div>
   </body>
 </html>
