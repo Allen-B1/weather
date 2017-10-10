@@ -29,12 +29,16 @@ window.addEventListener("load", loadAndStoreData);
 <!--head-->
     <style>
         div { font-family: sans; color: #fff; }
-        #temp { font-size:42px; text-align: center; margin-top: 24px; }
-        #about { font-size: 24px; text-align:center;}
+	    #container { margin: auto; width: 200px; }
+        #temp { font-size:42px; margin-top: 24px; }
+        #about { font-size: 24px; }
     </style>
 </head>
 
 <body style="background:#2196f3">
-    <div id="temp">72&deg;F</div>
-    <div id="about">clear sky</div>
+    <div id="container">
+        <img id="img" src="http://openweathermap.org/img/w/01d.png" style="float:right;margin-top:-12px" width="100" height="100">
+        <div id="temp">72&deg;F</div>
+        <div id="about">clear sky</div>
+    </div>
 </body>
