@@ -3,44 +3,45 @@
 function loadAndStoreData() {
 	var xhr = new XMLHttpRequest();
 	xhr.onload = function() {
-	    var jsonData = JSON.parse(xhr.responseText);
-	    var temp = jsonData.main.temp;
+		var jsonData = JSON.parse(xhr.responseText);
+		var temp = jsonData.main.temp;
 
-        document.getElementById("img").src = "http://openweathermap.org/img/w/" + jsonData.weather[0].icon + ".png";
-	    document.getElementById("about").innerHTML = jsonData.weather[0].description;
+		document.getElementById("img").src = "http://openweathermap.org/img/w/" + jsonData.weather[0].icon + ".png";
+		document.getElementById("about").innerHTML = jsonData.weather[0].description;
    	 	document.getElementById("temp").innerHTML = (temp | 0) + "&deg;F";
 	}
 	xhr.open("GET", "https://api.openweathermap.org/data/2.5/weather?q=rye&apikey=49615e05b6a67cd953c5c0c36c3243b5&units=Imperial");
 	xhr.send();
 	
 	var date = new Date();
-    var hr = date.getHours();
-    if(hr >= 18 && hr <= 19) { // Evening
-    	document.body.style.background = "#1976d2";
-    } else if(hr >= 20 || hr <= 7) { // night time
-        document.body.style.background = "#607d8b";
-    } else {
-        document.body.style.background = "#2196f3";
-    }
+	var hr = date.getHours();
+	if(hr >= 18 && hr <= 19) { // Evening
+		document.body.style.background = "#1976d2";
+	} else if(hr >= 20 || hr <= 7) { // night time
+		document.body.style.background = "#607d8b";
+	} else {
+		document.body.style.background = "#2196f3";
+	}
 }
 setInterval(100 * 1000, loadAndStoreData);
 window.addEventListener("load", loadAndStoreData);
 </script>
 
 <!--head-->
-    <style>
-        body { padding: 24px 36px}
-        div { font-family: sans; color: #fff; }
-	    #container { margin: auto; max-width: 280px; }
-        #temp { font-size:42px; }
-        #about { font-size: 24px; }
-    </style>
+	<title>Weather</title>
+	<style>
+		body { padding: 24px 36px}
+		div { font-family: sans; color: #fff; }
+		#container { margin: auto; max-width: 280px; }
+		#temp { font-size:42px; }
+		#about { font-size: 24px; }
+	</style>
 </head>
 
 <body style="background:#2196f3">
-    <div id="container">
-        <img id="img" src="http://openweathermap.org/img/w/02d.png" style="float:right;margin-top:-12px" width="100" height="100">
-        <div id="temp">72&deg;F</div>
-        <div id="about">clear sky</div>
-    </div>
+	<div id="container">
+		<img id="img" src="http://openweathermap.org/img/w/02d.png" style="float:right;margin-top:-12px" width="100" height="100">
+		<div id="temp">72&deg;F</div>
+		<div id="about">clear sky</div>
+	</div>
 </body>
