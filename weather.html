@@ -6,6 +6,7 @@ function loadAndStoreData() {
 	    var jsonData = JSON.parse(xhr.responseText);
 	    var temp = jsonData.main.temp;
 
+        document.getElementById("img").src = "http://openweathermap.org/img/w/" + jsonData.weather[0].icon + ".png";
 	    document.getElementById("about").innerHTML = jsonData.weather[0].description;
    	 	document.getElementById("temp").innerHTML = (temp | 0) + "&deg;F";
 	}
@@ -28,16 +29,17 @@ window.addEventListener("load", loadAndStoreData);
 
 <!--head-->
     <style>
+        body { padding: 24px 36px}
         div { font-family: sans; color: #fff; }
-	    #container { margin: auto; width: 200px; }
-        #temp { font-size:42px; margin-top: 24px; }
+	    #container { margin: auto; max-width: 280px; }
+        #temp { font-size:42px; }
         #about { font-size: 24px; }
     </style>
 </head>
 
 <body style="background:#2196f3">
     <div id="container">
-        <img id="img" src="http://openweathermap.org/img/w/01d.png" style="float:right;margin-top:-12px" width="100" height="100">
+        <img id="img" src="http://openweathermap.org/img/w/02d.png" style="float:right;margin-top:-12px" width="100" height="100">
         <div id="temp">72&deg;F</div>
         <div id="about">clear sky</div>
     </div>
