@@ -1,2 +1,2 @@
-# weather-applet
-Know what's outside without needing to have the hassle of looking outside
+# weatherat
+A simple weather applet
